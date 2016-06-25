@@ -15,9 +15,12 @@ namespace RecognitionHackSentiment.Twitter {
         /// <summary>
         /// Fetches tweets that match the provid
         /// </summary>
-        public IList<Tweet> Search(string query) {
+        public IList<Tweet> Search(string query, string lastStatus) {
             var b64Bearer = Convert.ToBase64String(Encoding.Default.GetBytes(HttpContext.Current.Server.UrlEncode(ConfigurationManager.AppSettings["TwitterConsumerKey"]) + ":" + HttpContext.Current.Server.UrlEncode(ConfigurationManager.AppSettings["TwitterConsumerSecret"])));
             var response = string.Empty;
+
+            if (lastStatus == null)
+                lastStatus = string.Empty;
 
             using (var wc = new WebClient()) {
                 wc.Headers.Add("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
@@ -29,7 +32,7 @@ namespace RecognitionHackSentiment.Twitter {
                 wc.Headers.Clear();
                 wc.Headers.Add("Authorization", "Bearer " + accessToken);
 
-                response = wc.DownloadString(string.Format("https://api.twitter.com/1.1/search/tweets.json?q={0}&count=100", query));
+                response = wc.DownloadString(string.Format("https://api.twitter.com/1.1/search/tweets.json?q={0}&count=100&since_id={1}", query, lastStatus));
             }
             
             return JsonConvert.DeserializeObject<TwitterStatuses>(response).Statuses;
