@@ -16,7 +16,7 @@ namespace RecognitionHackSentiment.Services {
 
         #region PublicMethods
 
-        public IList<SentimentDto> Get(string content) {
+        public IList<SentimentDto> Get(IList<SentimentRequestDto> sentiments) {
             var request = (HttpWebRequest)WebRequest.Create(SentimentApiUrl);
             request.AllowAutoRedirect = false;
             request.Proxy = null;
@@ -24,7 +24,7 @@ namespace RecognitionHackSentiment.Services {
             request.Headers.Add("Ocp-Apim-Subscription-Key", ConfigurationManager.AppSettings["TextApiKey"]);
 
             var sentimentDocuments = new Dictionary<string, IList<SentimentRequestDto>>();
-            sentimentDocuments.Add("documents", new List<SentimentRequestDto> { new SentimentRequestDto { Id = "a", Text = content } });
+            sentimentDocuments.Add("documents", sentiments);
 
             var json = JsonConvert.SerializeObject(sentimentDocuments);
 

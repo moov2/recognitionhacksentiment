@@ -201,6 +201,8 @@
     <Compile Include="Sentiment\SentimentDto.cs" />
     <Compile Include="Sentiment\SentimentService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Twitter\Tweet.cs" />
+    <Compile Include="Twitter\TweetProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
