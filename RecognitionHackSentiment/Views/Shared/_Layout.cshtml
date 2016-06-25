@@ -3,8 +3,71 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+
+    <style>
+
+        html,
+        body {
+            box-sizing: border-box;
+            height: 100%;
+            margin: 0;
+        }
+
+        body { 
+            color: white;
+            font-family: 'Roboto', sans-serif; 
+        }
+
+        h1 {
+            font-size: 5em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.175em;
+            margin-bottom: .5em;
+            margin-top: 0;
+        }
+
+        .wrapper {
+            display: table;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrapper__row {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .background-0 { background-color: #be6249; }
+        .background-1 { background-color: #be7b49; }
+        .background-2 { background-color: #be9649; }
+        .background-3 { background-color: #beac49; }
+        .background-4 { background-color: #bebd49; }
+        .background-5 { background-color: #acbe49; }
+        .background-6 { background-color: #8bbe49; }
+        .background-7 { background-color: #6faf4b; }
+        .background-8 { background-color: #62a54a; }
+        .background-9 { background-color: #5f9746; }
+
+        .logo {
+            bottom: 1.5em;
+            height: 78px;
+            position: absolute;
+            width: 152px;
+
+            left: 50%;
+            margin-left: -76px;
+        }
+
+    </style>
 </head>
-<body>
-    @RenderBody()
-</body>
+
+@RenderBody()
+
 </html>

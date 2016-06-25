@@ -12,7 +12,7 @@ namespace RecognitionHackSentiment.Controllers {
             var tweets = new TweetProvider().Search("%23recognitionhack OR %23RecognitionHack -filter:retweets");
 
             foreach (var tweet in tweets) {
-                Debug.WriteLine(tweet.Text);
+                Debug.WriteLine(tweet.StatusId + " - " + tweet.Text);
             }
 
             // get sentiment scores for the tweets.
