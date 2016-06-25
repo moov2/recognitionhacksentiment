@@ -4,7 +4,7 @@ This is a hack project for [re:cognition hack](https://twitter.com/recognitionha
 
 You can see this hack in action at the link below.
 
-[https://github.com/moov2/recognitionhacksentiment](https://github.com/moov2/recognitionhacksentiment)
+[http://recognitionhacksentiment.azurewebsites.net](http://recognitionhacksentiment.azurewebsites.net)
 
 ## Setup
 
